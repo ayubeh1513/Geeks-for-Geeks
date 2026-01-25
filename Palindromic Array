@@ -1,0 +1,28 @@
+/*Complete the Function below*/
+class Solution {
+    public static boolean isPalinArray(int[] arr) {
+        // add code here.
+        for(int i : arr){
+            if(isPali(i)){
+                return false;
+            }
+        }
+        
+        return true;
+    }
+    
+    public static boolean isPali(int n){
+        int k = 0;
+        int a = n;
+        while(n>0){
+            k = k*10 + n%10;
+            n = n/10;
+        }
+        
+        if(k==a){
+            return false;
+        } else {
+            return true;
+        }
+    }
+}
