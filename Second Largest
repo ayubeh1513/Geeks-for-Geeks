@@ -1,0 +1,22 @@
+class Solution {
+    public int getSecondLargest(int[] arr) {
+        // code here
+        int m = arr[0];
+        int n = -1;
+        for(int i : arr){
+            if(i>m){
+                m=i;
+            }
+        }
+        
+        for(int i : arr){
+            if(i!=m){
+                if(i>n){
+                    n=i;
+                }
+            }
+        }
+        
+        return n;
+    }
+}
