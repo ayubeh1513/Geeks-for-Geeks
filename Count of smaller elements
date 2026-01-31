@@ -1,0 +1,13 @@
+
+class Solution {
+    public int countOfElements(int x, List<Integer> arr) {
+        // Code here
+        int c = 0;
+        for(int i : arr){
+            if(x>=i){
+                c++;
+            }
+        }
+        return c;
+    }
+}
