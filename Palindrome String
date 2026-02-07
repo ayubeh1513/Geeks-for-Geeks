@@ -1,0 +1,13 @@
+class Solution {
+    boolean isPalindrome(String s) {
+        // code here
+        int n = s.length();
+        char[] sr = s.toCharArray();
+        for(int i=0; i<n; i++){
+            if(sr[i] != sr[n-1-i]){
+                return false;
+            }
+        }
+        return true;
+    }
+}
