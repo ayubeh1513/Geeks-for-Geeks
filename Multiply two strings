@@ -1,0 +1,13 @@
+import java.math.BigInteger;
+
+class Solution {
+    public String multiplyStrings(String s1, String s2) {
+        // code here
+        BigInteger s11 = new BigInteger(s1);
+        BigInteger s22 = new BigInteger(s2);
+        
+        BigInteger s12 = s11.multiply(s22);
+        
+        return String.valueOf(s12);
+    }
+}
