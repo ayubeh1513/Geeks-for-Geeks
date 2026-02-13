@@ -1,0 +1,17 @@
+class Solution {
+    int majorityElement(int arr[]) {
+        // code here
+        Map<Integer, Integer> m = new HashMap<>();
+        for(int i : arr){
+            if(m.containsKey(i)){
+                m.put(i, m.get(i) + 1);
+            } else {
+                m.put(i, 1);
+            }
+            
+            if(m.get(i) > arr.length/2) return i;
+        } 
+        
+        return -1;
+    }
+}
