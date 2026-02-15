@@ -1,0 +1,22 @@
+class Solution {
+    ArrayList<Integer> findTwoElement(int arr[]) {
+        // code here
+        Map<Integer, Integer> m = new HashMap<>();
+        ArrayList<Integer> a = new ArrayList<>();
+        for(int i : arr){
+            if(m.containsKey(i)){
+                a.add(i);
+            } else {
+                m.put(i, 1);
+            }
+        }
+        
+        for(int i=1; i<=arr.length; i++){
+            if(!m.containsKey(i)){
+                a.add(i);
+            }
+        }
+        
+        return a;
+    }
+}
