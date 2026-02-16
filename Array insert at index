@@ -1,0 +1,20 @@
+import java.util.*;
+
+class Solution {
+    public void insertAtIndex(ArrayList<Integer> arr, int index, int val) {
+        // code here
+        ArrayList<Integer> a = new ArrayList<>();
+        for(int i=0; i<index; i++){
+            a.add(arr.get(i));
+        }
+        
+        a.add(val);
+        
+        for(int i=index; i<arr.size(); i++){
+            a.add(arr.get(i));
+        }
+        
+        arr.clear();
+        arr.addAll(a);
+    }
+}
