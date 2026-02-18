@@ -1,0 +1,20 @@
+// User function Template for Java
+
+class Solution {
+    int[] getMoreAndLess(int[] arr, int target) {
+        // code here
+        int m = 0;
+        int n = 0;
+        for(int i : arr){
+            if(i>=target){
+                m++;
+            }
+            
+            if(i<=target){
+                n++;
+            }
+        }
+        int[] a = {n, m};
+        return a;
+    }
+}
