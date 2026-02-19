@@ -1,0 +1,20 @@
+class Solution {
+    // Method to find the element with odd occurrence in given array
+    int getOddOccurrence(int[] arr) {
+        // code here
+        Map<Integer, Integer> m = new HashMap<>();
+        
+        for(int a : arr){
+            if(m.containsKey(a)){
+                m.put(a, m.get(a) + 1);
+            } else {
+                m.put(a, 1);
+            }
+        }
+        
+        for(int a : m.keySet()){
+            if(m.get(a)%2!=0) return a;
+        }
+        return -1;
+    }
+}
