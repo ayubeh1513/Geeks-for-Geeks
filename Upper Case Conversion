@@ -1,0 +1,19 @@
+// User function Template for Java
+
+class Solution {
+    public String convert(String s) {
+        // code here
+        StringBuilder sb = new StringBuilder();
+        sb.append((char)(s.charAt(0)-32));
+        for(int i=1; i<s.length(); i++){
+            if(s.charAt(i)==' ' && i + 1 < s.length()){
+                sb.append(' ');
+                sb.append((char)(s.charAt(i+1)-32));
+                i+=1;
+            } else {
+                sb.append(s.charAt(i));
+            }
+        }
+        return sb.toString();
+    }
+}
