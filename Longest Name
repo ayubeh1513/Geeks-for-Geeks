@@ -1,0 +1,11 @@
+
+class Solution {
+    public String longest(List<String> arr) {
+        // code here
+        String m= "";
+        for(String i : arr){
+            if(i.length()>m.length()) m=i;
+        }
+        return m;
+    }
+}
