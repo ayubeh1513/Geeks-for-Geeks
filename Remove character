@@ -1,0 +1,18 @@
+// User function Template for Java
+class Solution {
+    static String removeChars(String str1, String str2) {
+        // code here
+        StringBuilder sb = new StringBuilder();
+        boolean a = true;
+        for(char i : str1.toCharArray()){
+            for(char j : str2.toCharArray()){
+                if(i==j){
+                    a=false;
+                }
+            }
+            if(a) sb.append(i);
+            a=true;
+        }
+        return sb.toString();
+    }
+}
