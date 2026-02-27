@@ -1,0 +1,25 @@
+// User function Template for Java
+
+class Solution {
+    String removeVowels(String s) {
+        char[] v = {'a', 'e', 'i', 'o', 'u', 'A', 'I', 'E', 'O', 'U'};
+        StringBuilder sb = new StringBuilder();
+        
+        for(char ch : s.toCharArray()){
+            boolean isVowel = false;
+            
+            for(char vowel : v){
+                if(ch == vowel){
+                    isVowel = true;
+                    break;
+                }
+            }
+            
+            if(!isVowel){
+                sb.append(ch);
+            }
+        }
+        
+        return sb.toString();
+    }
+}
