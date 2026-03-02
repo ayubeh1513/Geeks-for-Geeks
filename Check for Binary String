@@ -1,0 +1,9 @@
+class Solution {
+    boolean isBinary(String s) {
+        // Your code here
+        for(char i : s.toCharArray()){
+            if(i != '0' && i != '1') return false;
+        }
+        return true;
+    }
+}
