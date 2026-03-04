@@ -1,0 +1,14 @@
+// User function Template for Java
+class Solution {
+    char firstRep(String s) {
+        // your code here
+        for(int i=0; i<s.length(); i++){
+            char a = s.charAt(i);
+            for(int j=i+1; j<s.length(); j++){
+                if(a==s.charAt(j)) return a;
+            }
+        }
+        
+        return '#';
+    }
+}
