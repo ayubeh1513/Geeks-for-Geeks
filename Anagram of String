@@ -1,0 +1,41 @@
+/*Complete the function below*/
+class GfG {
+    public int remAnagrams(String s1, String s2) {
+        // add code here.
+        int c = 0;
+        String x="", n="";
+        if(s1.length()>s2.length()){
+            x = s1;
+            n = s2;
+        } else {
+            x = s2;
+            n = s1;
+        }
+        
+        Map<Character, Integer> m = new HashMap<>();
+        
+        for(char i : x.toCharArray()){
+            if(m.containsKey(i)){
+                m.put(i, m.get(i)+1);
+            } else {
+                m.put(i, 1);
+            }
+        }
+        
+        for(char i : n.toCharArray()){
+            if(!m.containsKey(i)) c++;
+            else{
+                if(m.get(i)==0) c++;
+                else{
+                    m.put(i, m.get(i) - 1);
+                }
+            }
+        }
+        
+        for(int i : m.values()){
+            c += i;
+        }
+        
+        return c;
+    }
+}
