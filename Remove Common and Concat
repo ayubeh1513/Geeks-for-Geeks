@@ -1,0 +1,35 @@
+import java.util.*;
+
+class Solution {
+    public static String concatenatedString(String s1, String s2) {
+
+        HashSet<Character> set1 = new HashSet<>();
+        HashSet<Character> set2 = new HashSet<>();
+        
+        for(char c : s1.toCharArray()){
+            set1.add(c);
+        }
+        
+        for(char c : s2.toCharArray()){
+            set2.add(c);
+        }
+
+        StringBuilder sb = new StringBuilder();
+
+        for(char c : s1.toCharArray()){
+            if(!set2.contains(c)){
+                sb.append(c);
+            }
+        }
+
+        for(char c : s2.toCharArray()){
+            if(!set1.contains(c)){
+                sb.append(c);
+            }
+        }
+
+        if(sb.length() == 0) return "-1";
+
+        return sb.toString();
+    }
+}
