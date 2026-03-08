@@ -1,0 +1,35 @@
+// User function Template for Java
+
+class Solution {
+    String modify(String s) {
+        // your code here
+        StringBuilder sb = new StringBuilder();
+        StringBuilder vo = new StringBuilder();
+        
+        Character[] st = new Character[s.length()];
+        int l=0;
+        
+        for(char i : s.toCharArray()){
+            if(i=='a' || i=='e' || i=='i' || i=='o' || i=='u'){
+                st[l]='0';
+                vo.append(i);
+                l++;
+            } else {
+                st[l]=i;
+                l++;
+            }
+        }
+        
+        int h = vo.length() - 1;
+        for(int i=0; i<st.length; i++){
+            if(st[i]=='0'){
+                sb.append(vo.charAt(h));
+                h--;
+            } else {
+                sb.append(st[i]);
+            }
+        }
+        
+        return sb.toString();
+    }
+}
