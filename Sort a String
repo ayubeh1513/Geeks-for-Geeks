@@ -1,0 +1,20 @@
+// User function Template for Java
+class Solution {
+    String sort(String s) {
+        // code here
+        StringBuilder sb = new StringBuilder();
+        int[] a = new int[26];
+        for(char i : s.toCharArray()){
+            a[i-97] += 1;
+        }
+        
+        for(int i=0; i<26; i++){
+            if(a[i]>0){
+                for(int j=0; j<a[i]; j++){
+                    sb.append((char)(i+97));
+                }
+            }
+        }
+        return sb.toString();
+    }
+}
