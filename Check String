@@ -1,0 +1,12 @@
+// User function Template for Java
+
+class Sol {
+    Boolean check(String s) {
+        // your code here
+        char a = s.charAt(0);
+        for(char i : s.toCharArray()){
+            if(i!=a) return false;
+        }
+        return true;
+    }
+}
