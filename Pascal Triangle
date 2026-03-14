@@ -1,0 +1,21 @@
+class Solution {
+    ArrayList<Integer> nthRowOfPascalTriangle(int n) {
+        // code here
+        ArrayList<Integer> a = new ArrayList<>();
+        
+        if(n==0) return a;
+        a.add(1);
+        if(n==1) return a;
+        
+        for(int i=2; i<=n; i++){
+            ArrayList<Integer> c = new ArrayList<>();
+            c.add(1);
+            for(int j=1; j<i-1; j++){
+                c.add(a.get(j-1) + a.get(j));
+            }
+            c.add(1);
+            a = c;
+        }
+        return a;
+    }
+}
