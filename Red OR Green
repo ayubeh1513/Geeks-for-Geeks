@@ -1,0 +1,13 @@
+// User function template for Java
+
+class Solution {
+    static int RedOrGreen(int n, String s) {
+        // code here
+        int a = 0;
+        for(char i : s.toCharArray()){
+            if(i=='R') a++;
+        }
+        
+        return Math.min(a, n-a);
+    }
+}
