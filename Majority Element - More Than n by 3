@@ -1,0 +1,32 @@
+class Solution {
+    public ArrayList<Integer> findMajority(int[] arr) {
+        // Code here
+        int n=arr.length/3;
+        ArrayList<Integer> a = new ArrayList<>();
+        int[] ap = new int[100001];
+        int[] an = new int[100001];
+        
+        for(int i=0; i<100001; i++){
+            ap[i]=0;
+            an[i]=0;
+        }
+        
+        for(int i : arr){
+            if(i<0){
+                an[i*-1] = an[i*-1] + 1;
+            } else{
+                ap[i] = ap[i] + 1;
+            }
+        }
+        
+        for(int i=1; i<100001; i++){
+            if(an[i]>n) a.add(i*-1);
+        }
+        
+        for(int i=0; i<100001; i++){
+            if(ap[i]>n) a.add(i);
+        }
+        
+        return a;
+    }
+}
