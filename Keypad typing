@@ -1,0 +1,48 @@
+// User function Template for Java
+class Solution {
+    // Function to find matching decimal representation of a string as on the keypad.
+    public static String printNumber(String s, int n) {
+        // Your code here
+        StringBuilder sb = new StringBuilder();
+        for(char i : s.toCharArray()){
+            sb.append(gV(i));
+        }
+        return sb.toString();
+    }
+    
+    public static Character gV(char i){
+        if(i=='a' || i=='b' || i=='c'){
+            return '2';
+        }
+        
+        if(i=='d' || i=='e' || i=='f'){
+            return '3';
+        }
+        
+        if(i=='g' || i=='h' || i=='i'){
+            return '4';
+        }
+        
+        if(i=='j' || i=='k' || i=='l'){
+            return '5';
+        }
+        
+        if(i=='m' || i=='n' || i=='o'){
+            return '6';
+        }
+        
+        if(i=='p' || i=='q' || i=='r' || i=='s'){
+            return '7';
+        }
+        
+        if(i=='t' || i=='u' || i=='v'){
+            return '8';
+        }
+        
+        if(i=='w' || i=='x' || i=='y' || i=='z'){
+            return '9';
+        }
+        
+        return '1';
+    }
+}
