@@ -1,0 +1,24 @@
+class Solution {
+    public static int subArraySum(int[] arr, int k) {
+        // code here.
+        Map<Integer, Integer> m = new HashMap<>();
+        m.put(0, 1);
+        int ps = 0;
+        int cnt = 0;
+        for(int i : arr){
+            ps += i;
+            int psk = ps - k;
+            if(m.containsKey(psk)){
+                cnt += m.get(psk);
+            }
+            
+            if(m.containsKey(ps)){
+                m.put(ps, m.get(ps)+1);
+            } else {
+                m.put(ps,1);
+            }
+        }
+        
+        return cnt;
+    }
+}
