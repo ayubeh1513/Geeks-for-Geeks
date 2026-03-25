@@ -1,0 +1,35 @@
+class Solution {
+    public ArrayList<ArrayList<Integer>> fourSum(int[] arr, int target) {
+        // code here
+        Arrays.sort(arr);
+        Set<ArrayList<Integer>> sa = new HashSet<>();
+        if(arr.length<4) return new ArrayList<>();
+        
+        for(int i=0; i<arr.length-3; i++){
+            for(int j=i+1; j<arr.length-2; j++){
+                int l = j+1;
+                int r = arr.length-1;
+                
+                while(l<r){
+                    long s = (long) arr[i] + arr[j] + arr[l] + arr[r];
+                    if(s==target){
+                        ArrayList<Integer> a = new ArrayList<>();
+                        a.add(arr[i]);
+                        a.add(arr[j]);
+                        a.add(arr[l]);
+                        a.add(arr[r]);
+                        sa.add(a);
+                        l++;
+                        r--;
+                    } else if(s<target){
+                        l++;
+                    } else {
+                        r--;
+                    }
+                }
+            }
+        }
+        
+        return new ArrayList<>(sa);
+    }
+}
