@@ -1,0 +1,25 @@
+// User function Template for Java
+
+class Solution {
+    public int longestSubarray(int[] arr, int k) {
+        // code here
+        HashMap<Long, Integer> m = new HashMap<>();
+        long ps = 0;
+        long mx = 0;
+        m.put(0L,-1);
+        for(int i=0; i<arr.length; i++){
+            ps += arr[i];
+            long psk = ps-k;
+            if(m.containsKey(psk)){
+                long u = i - m.get(psk);
+                mx = Math.max(mx, u);
+            } 
+            
+            if(!m.containsKey(ps)){
+                m.put(ps, i);
+            }
+        }
+        
+        return (int) mx;
+    }
+}
