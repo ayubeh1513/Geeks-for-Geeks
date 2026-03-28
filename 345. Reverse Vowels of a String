@@ -1,0 +1,35 @@
+class Solution {
+    public String reverseVowels(String s) {
+        char[] a = new char[s.length()];
+        StringBuilder sb = new StringBuilder();
+        int k=0;
+        for(char i : s.toCharArray()){
+            if(isV(i)){
+                a[k]='+';
+                sb.append(i);
+                k++;
+            } else{
+                a[k]=i;
+                k++;
+            }
+        }
+
+        int l=sb.length()-1;
+        for(int i=0; i<s.length(); i++){
+            if(a[i]=='+'){
+                a[i]=sb.charAt(l);
+                l--;
+            }
+        }
+
+        return new String(a);
+    }
+
+    public static boolean isV(char z){
+        if(z=='a' || z=='e' || z=='i' || z=='o' || z=='u' || z=='A' || z=='E' || z=='I' || z=='O' || z=='U'){
+            return true;
+        }
+
+        return false;
+    }
+}
