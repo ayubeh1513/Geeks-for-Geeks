@@ -1,0 +1,17 @@
+class Solution {
+    int maxProduct(int[] arr) {
+        // code here
+        int l=1, r=1, n=arr.length, m=arr[0];
+        for(int i=0; i<n; i++){
+            l = l==0 ? 1 : l;
+            r = r==0 ? 1 : r;
+            
+            l *= arr[i];
+            r *= arr[n-1-i];
+            
+            m = Math.max(m, Math.max(l,r));
+        }
+        
+        return m;
+    }
+}
