@@ -1,0 +1,20 @@
+class Solution {
+    int maxLength(int arr[]) {
+        // code here
+        Map<Integer, Integer> m = new HashMap<>();
+        int mi = 0;
+        int ps = 0;
+        m.put(0,-1);
+        for(int i=0; i<arr.length; i++){
+            ps += arr[i];
+            if(m.containsKey(ps)){
+                int f = i-m.get(ps);
+                mi = Math.max(mi, f);
+            } else {
+                m.put(ps, i);
+            }
+        }
+        
+        return mi;
+    }
+}
