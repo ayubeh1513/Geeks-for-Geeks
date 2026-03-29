@@ -1,0 +1,25 @@
+// User function Template for Java
+
+class Solution {
+    public String removeConsonants(String s) {
+        // code here.
+        StringBuilder sb = new StringBuilder();
+        for(char i : s.toCharArray()){
+            if(isV(i)){
+                sb.append(i);
+            }
+        }
+        
+        if(sb.isEmpty()){
+            return "No Vowel";
+        } else return sb.toString();
+    }
+    
+    public static boolean isV(char z){
+        if(z=='a' || z=='e' || z=='i' || z=='o' || z=='u' || z=='A' || z=='E' || z=='I' || z=='O' || z=='U'){
+            return true;
+        }
+
+        return false;
+    }
+}
