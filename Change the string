@@ -1,0 +1,11 @@
+// User function Template for Java
+
+class Solution {
+    String modify(String s) {
+        if(s.charAt(0)>='A' && s.charAt(0)<='Z'){
+            return s.toUpperCase();
+        }
+        
+        return s.toLowerCase();
+    } 
+}
