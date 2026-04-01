@@ -1,0 +1,23 @@
+class Solution {
+    public ArrayList<int[]> mergeOverlap(int[][] arr) {
+        // Code here
+        ArrayList<int[]> a = new ArrayList<>();
+        Arrays.sort(arr, Comparator.comparingInt(z -> z[0]));
+        
+        int[] ni = arr[0];
+        a.add(ni);
+        
+        if(arr.length <=1) return a;
+        
+        for(int[] as : arr){
+            if(as[0]<=ni[1]){
+                ni[1]=Math.max(as[1], ni[1]);
+            } else{
+                ni=as;
+                a.add(ni);
+            }
+        }
+        
+        return a;
+    }
+}
