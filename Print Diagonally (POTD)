@@ -1,0 +1,15 @@
+class Solution {
+    static ArrayList<Integer> diagView(int mat[][]) {
+        // code here
+        ArrayList<Integer> a = new ArrayList<>();
+        for(int i=0; i<mat.length*2; i++){
+            for(int j=0; j<mat.length; j++){
+                for(int k=0; k<mat[0].length; k++){
+                    if((j+k)==i) a.add(mat[j][k]);
+                }
+            }
+        }
+        
+        return a;
+    }
+}
