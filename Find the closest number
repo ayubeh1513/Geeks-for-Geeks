@@ -1,0 +1,19 @@
+
+class Solution {
+    public static int findClosest(int[] arr, int k) {
+        // code here
+        int a=0, m=1000000001;
+        for(int i : arr){
+            if(Math.abs(k-i)==m && i>k){
+                return i;
+            }
+            
+            if(Math.abs(k-i)<m){
+                a=i;
+                m=Math.abs(k-i);
+            }
+        }
+        
+        return a;
+    }
+}
