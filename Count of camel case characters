@@ -1,0 +1,12 @@
+// User function Template for Java
+
+class Sol {
+    int countCamelCase(String s) {
+        // your code here
+        int a=0;
+        for(char i : s.toCharArray()){
+            if(i>='A' && i<='Z') a++;
+        }
+        return a;
+    }
+}
