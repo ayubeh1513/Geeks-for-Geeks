@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class Solution {
+    public static int getFourthLargest(int[] arr) {
+        if (arr.length < 4) return Integer.MIN_VALUE;
+
+        int first = Integer.MIN_VALUE;
+        int second = Integer.MIN_VALUE;
+        int third = Integer.MIN_VALUE;
+        int fourth = Integer.MIN_VALUE;
+
+        for (int num : arr) {
+
+            if (num >= first) {
+                fourth = third;+
+                third = second;
+                second = first;
+                first = num;
+            }
+            else if (num >= second) {
+                fourth = third;
+                third = second;
+                second = num;
+            }
+            else if (num >= third) {
+                fourth = third;
+                third = num;
+            }
+            else if (num >= fourth) {
+                fourth = num;
+            }
+        }
+
+        return fourth;
+    }
+}
