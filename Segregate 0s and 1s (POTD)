@@ -1,0 +1,21 @@
+class Solution {
+    void segregate0and1(int[] arr) {
+        // code here
+        int a = 0;
+        int b = arr.length-1;
+        
+        while(a<b){
+            if(arr[b]==0 && arr[a]==1){
+                int t = arr[b];
+                arr[b] = arr[a];
+                arr[a] = t;
+                b--;
+                a++;
+            } else if(arr[b]==1){
+                b--;
+            } else{
+                a++;
+            }
+        }
+    }
+}
