@@ -1,0 +1,27 @@
+import java.util.*;
+
+class Solution {
+    ArrayList<Integer> intersection(int[] ar, int[] br) {
+        ArrayList<Integer> result = new ArrayList<>();
+        
+        int a = 0, b = 0;
+        
+        while (a < ar.length && b < br.length) {
+            if (ar[a] == br[b]) {
+                if (result.isEmpty() || result.get(result.size() - 1) != ar[a]) {
+                    result.add(ar[a]);
+                }
+                a++;
+                b++;
+            } 
+            else if (ar[a] < br[b]) {
+                a++;
+            } 
+            else {
+                b++;
+            }
+        }
+        
+        return result;
+    }
+}
