@@ -1,0 +1,17 @@
+// User function Template for Java
+
+class Sol {
+    int[] count(String s) {
+        // your code here
+        int l=0, u=0, n=0, b=0;
+        for(char i : s.toCharArray()){
+            if(i>='a' && i<='z') l++;
+            else if (i>='A' && i<='Z') u++;
+            else if (i>='0' && i<='9') n++;
+            else b++;
+        }
+        
+        int[] a = {u, l, n, b};
+        return a;
+    }
+}
