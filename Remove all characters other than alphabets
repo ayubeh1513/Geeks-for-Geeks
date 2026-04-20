@@ -1,0 +1,13 @@
+// User function Template for Java
+
+class Solution {
+    String removeSpecialCharacter(String s) {
+        // code here
+        StringBuilder sb = new StringBuilder();
+        for(char i : s.toCharArray()){
+            if((i>='A' && i<='Z') || (i>='a' && i<='z')) sb.append(i);
+        }
+        if(sb.isEmpty()) return "-1";
+        return sb.toString();
+    }
+}
