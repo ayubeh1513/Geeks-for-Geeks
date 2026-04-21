@@ -1,0 +1,19 @@
+// User function Template for Java
+
+class Sol {
+    int EvenOdd(String n1, String n2) {
+        // code here.
+        long nn1 = 0, nn2 = 0;
+        for(char i : n1.toCharArray()){
+            nn1 *= 10;
+            nn1 += (i-'0');
+        }
+        for(char i : n2.toCharArray()){
+            nn2 *= 10;
+            nn2 += (i-'0');
+        }
+        
+        if(nn1*nn2%2==0) return 1;
+        else return 0;
+    }
+}
