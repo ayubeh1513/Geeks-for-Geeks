@@ -1,0 +1,24 @@
+class Solution {
+    static int extractMaximum(String s) {
+        int m = -1;
+        int n = -1;
+
+        for (char i : s.toCharArray()) {
+            if (i >= '0' && i <= '9') {
+                if (n == -1) n = 0;
+                n = n * 10 + (i - '0');
+            } else {
+                if (n != -1) {
+                    m = Math.max(m, n);
+                    n = -1;  
+                }
+            }
+        }
+
+        if (n != -1) {
+            m = Math.max(m, n);
+        }
+
+        return m;
+    }
+}
