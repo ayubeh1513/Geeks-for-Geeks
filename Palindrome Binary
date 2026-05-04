@@ -1,0 +1,22 @@
+class Solution {
+    public boolean isBinaryPalindrome(int n) {
+        // code here
+        StringBuilder sb = new StringBuilder();
+        while(n>0){
+            if(n%2==0) sb.append('0');
+            else sb.append('1');
+            n/=2;
+        }
+        
+        return isP(sb);
+    }
+    
+    public static boolean isP(StringBuilder sb){
+        int a=0, b=sb.length()-1;
+        while(a<b){
+            if(sb.charAt(a)!=sb.charAt(b)) return false;
+            a++; b--;
+        }
+        return true;
+    }
+}
