@@ -1,0 +1,12 @@
+// User function Template for Java
+
+class Solution {
+    String removeCharacters(String s) {
+        // code here
+        StringBuilder sb = new StringBuilder();
+        for(char i : s.toCharArray()){
+            if(i>='0' && i<='9') sb.append(i);
+        }
+        return sb.toString();
+    }
+}
