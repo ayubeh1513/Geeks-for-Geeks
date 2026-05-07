@@ -1,0 +1,52 @@
+/*
+Definition for Node
+class Node {
+    int data;
+    Node left;
+    Node right;
+
+    Node(int x) {
+        data = x;
+        left = right = null;
+    }
+}
+*/
+
+class Solution {
+    
+    // Function to check if two trees are identical
+    boolean isIdentical(Node a, Node b) {
+        
+        // both are null
+        if (a == null && b == null)
+            return true;
+        
+        // one is null, other is not
+        if (a == null || b == null)
+            return false;
+        
+        // check current node + left subtree + right subtree
+        return (a.data == b.data) &&
+               isIdentical(a.left, b.left) &&
+               isIdentical(a.right, b.right);
+    }
+    
+    public boolean isSubTree(Node root1, Node root2) {
+        
+        // Empty tree is always a subtree
+        if (root2 == null)
+            return true;
+        
+        // Main tree becomes empty
+        if (root1 == null)
+            return false;
+        
+        // If trees match from current node
+        if (isIdentical(root1, root2))
+            return true;
+        
+        // Otherwise check in left or right subtree
+        return isSubTree(root1.left, root2) ||
+               isSubTree(root1.right, root2);
+    }
+}
