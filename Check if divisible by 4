@@ -1,0 +1,14 @@
+// User function Template for Java
+
+class Sol {
+    int divisibleBy4(String N) {
+        // Your Code Here
+        int a = 0;
+        for(char i : N.toCharArray()){
+            a *= 10;
+            a += (i-'0');
+        }
+        if(a%4==0) return 1;
+        return 0;
+    }
+}
