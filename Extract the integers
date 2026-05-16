@@ -1,0 +1,30 @@
+// User function Template for Java
+class Solution {
+    ArrayList<String> extractIntegerWords(String s) {
+        ArrayList<String> ans = new ArrayList<>();
+        String num = "";
+
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+
+            if (Character.isDigit(ch)) {
+                num += ch;   
+            } else {
+                if (!num.equals("")) {
+                    ans.add(num);
+                    num = "";
+                }
+            }
+        }
+
+        if (!num.equals("")) {
+            ans.add(num);
+        }
+
+        if (ans.size() == 0) {
+            ans.add("No Integers");
+        }
+
+        return ans;
+    }
+}
