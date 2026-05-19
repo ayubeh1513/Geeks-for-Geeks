@@ -1,0 +1,13 @@
+// User function Template for Java
+
+class Solution {
+    static boolean check_duck(String num) {
+        // code here
+        int a = 0;
+        for(char i : num.toCharArray()){
+            if(i=='0' && a==1) return true;
+            if(i!='0') a=1;
+        }
+        return false;
+    }
+}
