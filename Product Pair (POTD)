@@ -1,0 +1,44 @@
+class Solution {
+    public boolean isProduct(int[] arr, long target) {
+        
+        HashMap<Integer, Integer> map = new HashMap<>();
+        
+        for(int i : arr) {
+            map.put(i, map.getOrDefault(i, 0) + 1);
+        }
+
+        for(int i : arr) {
+            
+            if(i == 0) {
+                if(target == 0 && map.get(0) > 1) {
+                    return true;
+                }
+                continue;
+            }
+
+            if(target % i == 0) {
+                
+                long need = target / i;
+
+                if(need >= Integer.MIN_VALUE && need <= Integer.MAX_VALUE) {
+                    
+                    int val = (int) need;
+
+                    if(map.containsKey(val)) {
+
+                        if(val == i) {
+                            if(map.get(i) > 1) {
+                                return true;
+                            }
+                        } 
+                        else {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+}
