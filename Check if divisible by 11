@@ -1,0 +1,14 @@
+import java.math.BigInteger;
+
+class Sol {
+    int divisibleBy11(String S) {
+        
+        BigInteger a = new BigInteger(S);
+
+        if (a.mod(BigInteger.valueOf(11)).equals(BigInteger.ZERO)) {
+            return 1;
+        }
+
+        return 0;
+    }
+}
