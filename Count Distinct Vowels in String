@@ -1,0 +1,19 @@
+class Solution {
+    public int countVowels(String s) {
+        // code here
+        ArrayList<Character> a = new ArrayList<>();
+        int p = 0;
+        for(char i : s.toCharArray()){
+            if(isVowel(i) && !a.contains(i)){
+                a.add(i);
+                p++;
+            }
+        }
+        
+        return p;
+    }
+    
+    public static boolean isVowel(char ch) {
+        return "aeiouAEIOU".indexOf(ch) != -1;
+    }
+}
