@@ -1,0 +1,15 @@
+class Solution {
+    public int coin(int[] arr) {
+        // code here
+        int a=0, b=arr.length-1;
+        while(a!=b){
+            if(arr[a]>arr[b]){
+                a++;
+            } else{
+                b--;
+            }
+        }
+        
+        return arr[a];
+    }
+}
