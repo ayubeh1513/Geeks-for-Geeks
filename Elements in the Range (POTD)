@@ -1,0 +1,12 @@
+class Solution {
+    public boolean checkElements(int start, int end, int[] arr) {
+        // code here
+        ArrayList<Integer> a = new ArrayList<>();
+        for(int i : arr) a.add(i);
+        for(int i=start; i<=end; i++){
+            if(!a.contains(i)) return false;
+        }
+        
+        return true;
+    }
+}
