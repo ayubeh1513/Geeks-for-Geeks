@@ -1,0 +1,14 @@
+import java.math.BigInteger;
+
+class Solution {
+    int remainderWith7(String num) {
+        // code here
+        int r = 0;
+        for(int i=0; i<num.length(); i++){
+            int d = num.charAt(i)-'0';
+            r = (r*10 + d) % 7;
+        }
+        
+        return r;
+    }
+}
