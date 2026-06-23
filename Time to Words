@@ -1,0 +1,72 @@
+class Solution {
+    public String timeToWord(int h, int mi) {
+        // code here
+        Map<Integer, String> m = new HashMap<>();
+        m.put(1, "one");
+        m.put(2, "two");
+        m.put(3, "three");
+        m.put(4, "four");
+        m.put(5, "five");
+        m.put(6, "six");
+        m.put(7, "seven");
+        m.put(8, "eight");
+        m.put(9, "nine");
+        m.put(10, "ten");
+        m.put(11, "eleven");
+        m.put(12, "twelve");
+        m.put(13, "thirteen");
+        m.put(14, "fourteen");
+        m.put(15, "quarter");
+        m.put(16, "sixteen");
+        m.put(17, "seventeen");
+        m.put(18, "eighteen");
+        m.put(19, "nineteen");
+        m.put(20, "twenty");
+        m.put(21, "twenty one");
+        m.put(22, "twenty two");
+        m.put(23, "twenty three");
+        m.put(24, "twenty four");
+        m.put(25, "twenty five");
+        m.put(26, "twenty six");
+        m.put(27, "twenty seven");
+        m.put(28, "twenty eight");
+        m.put(29, "twenty nine");
+        m.put(30, "half");
+        
+        StringBuilder sb = new StringBuilder();
+        if(mi==0){
+            sb.append(m.get(h));
+            sb.append(" o' clock");
+        } else if(mi==30){
+            sb.append(m.get(mi));
+            sb.append(" past ");
+            sb.append(m.get(h));
+        } else if(mi==15 ){
+            sb.append(m.get(mi));
+            sb.append(" past ");
+            sb.append(m.get(h));
+        } else if(mi==45){
+            sb.append(m.get(15));
+            sb.append(" to ");
+            sb.append(m.get(h+1));
+        } else if(mi==59){
+            sb.append(m.get(60-mi));
+            sb.append(" minute to ");
+            sb.append(m.get(h+1));
+        } else if(mi==1){
+            sb.append(m.get(mi));
+            sb.append(" minute past ");
+            sb.append(m.get(h));
+        } else if (mi>30){
+            sb.append(m.get(60-mi));
+            sb.append(" minutes to ");
+            sb.append(m.get(h+1));
+        } else{
+            sb.append(m.get(mi));
+            sb.append(" minutes past ");
+            sb.append(m.get(h));
+        }
+        
+        return sb.toString();
+    }
+}
