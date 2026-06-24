@@ -1,0 +1,14 @@
+class Solution {
+    public static String missingPanagram(String s) {
+        s = s.toLowerCase();
+        StringBuilder sb = new StringBuilder();
+
+        for (char ch = 'a'; ch <= 'z'; ch++) {
+            if (s.indexOf(ch) == -1) {
+                sb.append(ch);
+            }
+        }
+
+        return sb.length() == 0 ? "-1" : sb.toString();
+    }
+}
