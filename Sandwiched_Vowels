@@ -1,0 +1,28 @@
+class Solution {
+
+    public String SandwichedVowel(String s) {
+        // code here
+        StringBuilder sb = new StringBuilder();
+        sb.append(s.charAt(0));
+        for(int i=1; i<s.length()-1; i++){
+            if(isVowel(s.charAt(i))){
+                if(isVowel(s.charAt(i-1)) || isVowel(s.charAt(i+1))){
+                    sb.append(s.charAt(i));
+                }
+            } else{
+                sb.append(s.charAt(i));
+            }
+        }
+        
+        sb.append(s.charAt(s.length()-1));
+        return sb.toString();
+    }
+    
+    public static boolean isVowel(char c){
+        if(c=='a' ||c=='e' || c=='i' || c=='o' || c=='u' || c=='A' || c=='E' ||c=='I' || c=='O' ||c=='U'){
+            return true;
+        }
+        
+        return false;
+    }
+}
