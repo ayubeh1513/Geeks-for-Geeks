@@ -1,0 +1,23 @@
+class Solution {
+    public ArrayList<ArrayList<Integer>> countFreq(int[] arr) {
+        // code here
+        HashMap<Integer, Integer> m = new HashMap<>();
+        ArrayList<ArrayList<Integer>> a = new ArrayList<>();
+        for(int i : arr){
+            if(m.containsKey(i)){
+                m.put(i, m.get(i)+1);
+            } else{
+                m.put(i, 1);
+            }
+        }
+        
+        for(int i : m.keySet()){
+            ArrayList<Integer> ab = new ArrayList<>();
+            ab.add(i);
+            ab.add(m.get(i));
+            a.add(ab);
+        }
+        
+        return a;
+    }
+}
