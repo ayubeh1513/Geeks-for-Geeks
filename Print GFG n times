@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+class GFG {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        // code here
+        pR(n);
+    }
+    
+    public static void pR(int n){
+        System.out.print("GFG ");
+        if(n>1) pR(n-1);
+    }
+}
