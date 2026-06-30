@@ -1,0 +1,23 @@
+class Solution {
+    static boolean armstrongNumber(int n) {
+        // code here
+        int t = n;
+        int d = nD(n);
+        int s = 0;
+        while(t!=0){
+            int u = t%10;
+            s += Math.pow(u, d);
+            t/=10;
+        }
+        return s==n;
+    }
+    
+    public static int nD(int n){
+        int s=0;
+        while(n!=0){
+            s++;
+            n/=10;
+        }
+        return s;
+    }
+}
