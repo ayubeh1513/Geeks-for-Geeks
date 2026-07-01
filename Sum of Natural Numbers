@@ -6,6 +6,11 @@ class GFG {
         int n = sc.nextInt();
 
         // code here
-        System.out.print(n * (n+1) / 2);
+        System.out.print(pS(n));
+    }
+    
+    public static int pS(int n){
+        if(n==0) return 0;
+        return n + pS(n-1);
     }
 }
