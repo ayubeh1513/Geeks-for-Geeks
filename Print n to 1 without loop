@@ -1,0 +1,8 @@
+class Solution {
+    void printNos(int n) {
+        // code here
+        System.out.print(n+" ");
+        if(n==1) return;
+        printNos(n-1);
+    }
+}
