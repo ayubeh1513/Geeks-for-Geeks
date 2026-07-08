@@ -1,0 +1,16 @@
+class Solution {
+    public void reverseArray(int arr[]) {
+        // code here
+        rA(arr, 0, arr.length-1);
+    }
+    
+    public void rA(int[] arr, int l, int r){
+        if(l>=r) return;
+        
+        int t = arr[l];
+        arr[l] = arr[r];
+        arr[r] = t;
+        
+        rA(arr, l+1, r-1);
+    }
+}
